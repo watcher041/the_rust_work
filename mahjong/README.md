@@ -7,3 +7,8 @@
 - 麻雀牌が表示される
 - 麻雀牌は14枚、一枚捨てるとその牌が河に追加され、牌は13枚になる。
 - 13枚の状態で1枚ツモると自動で理牌され、14枚表示される
+
+```rust
+cargo install fyrox-template
+fyrox-template init --name mahjong --style 2d
+```
