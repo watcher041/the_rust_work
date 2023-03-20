@@ -1,0 +1,28 @@
+
+body {
+    background-image: url(back_image.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main_index {
+    height: 50vh;
+    width: 90vh;
+    display: flex;
+    align-items: center;
+    background-color: red;
+}
+
+#main_index_left {
+    width: 60%;
+}
+
+#main_index_left_img {
+    width: 100%;
+}
+
+#main_index_right {
+    width: 100%;
+}
