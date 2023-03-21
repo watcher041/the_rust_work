@@ -1,22 +1,26 @@
 
-// フレームを表示するためのクレートを指定
+// フレームを表示させるクレートを指定
+extern crate piston_window;
 use piston_window::*;
 
 // メイン関数
 fn main() {
 
-    // フレームの外枠を定義
+    // フレームの外枠を設定
     let mut window: PistonWindow = 
-        WindowSettings::new("麻雀ゲーム", [640, 640])
-        .exit_on_esc(true).build().unwrap();
+        WindowSettings::new("麻雀ゲーム", [630, 630])
+            .exit_on_esc(true) // escでフレームを終了
+            .build()
+            .unwrap();
+    
+    // フレームの内容を設定
+    while let Some(event) = window.next() {
 
-    // フレームの中身を定義
-    // Some：タプル
-    while let Some(e) = window.next() {
-        window.draw_2d(&e, |c, g, _device| {
+        // 2Dで画像を描写
+        window.draw_2d(&event, |c, g, _device| {
             clear([1.0; 4], g);
             rectangle([1.0, 0.0, 0.0, 1.0], // red
-                      [0.0, 0.0, 100.0, 100.0], //[左上から見て(0,0)から100××100の正方形になる]
+                      [0.0, 0.0, 100.0, 100.0],
                       c.transform, g);
         });
     }
