@@ -1,19 +1,13 @@
 
-// 必要なクレートを定義
-use actix_web::{web, App, HttpServer, Responder};
+mod routes;
+mod controllers;
 
-// 非同期関数を定義
-async fn home() -> impl Responder {
-    "Hello,world!"
-}
+use actix_web::{App, HttpServer};
 
-// メイン関数
 #[actix_rt::main]
 async fn main() -> std::io::Result<()> {
-    HttpServer::new(|| 
-        App::new()
-        .route("/", web::get().to(home)))
-        .bind("127.0.0.1:3000")?
+    HttpServer::new(|| App::new().configure(routes::routing) )
+        .bind("localhost:3000")?
         .run()
         .await
 }

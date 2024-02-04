@@ -1,10 +1,11 @@
+
+# アプリの情報
 [package]
 name = "elect_archive"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
+# 高速なため、actix-webとsailfishを導入
 [dependencies]
 actix-rt = "2.9.0"
 actix-web = "4.4.1"
